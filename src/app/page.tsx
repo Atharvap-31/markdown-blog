@@ -10,7 +10,7 @@ export default function Home() {
     const markdown = fs.readFileSync(path.join("posts", filename), "utf-8");
     const { data } = matter(markdown);
     return {
-      slug: filename.replace(".md", ""),
+      id: filename.replace(".md", ""),
       title: data.title,
       date: data.date,
     };
@@ -29,7 +29,7 @@ export default function Home() {
 
       <div className="flex flex-col gap-6">
         {posts.map((post) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`}>
+          <Link key={post.id} href={`/blog/${post.id}`}>
             <div className="p-6 bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition duration-200 hover:border-blue-500 group">
               <h2 className="text-2xl font-bold text-gray-800 group-hover:text-blue-600 transition">
                 {post.title}
