@@ -1,4 +1,3 @@
-// app/blog/[slug]/page.tsx
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -13,7 +12,7 @@ type Props = {
 export async function generateStaticParams() {
   const files = fs.readdirSync(path.join("posts"));
   return files.map((filename) => ({
-    slug: filename.replace(".md", ""),
+    id: filename.replace(".md", ""),
   }));
 }
 
