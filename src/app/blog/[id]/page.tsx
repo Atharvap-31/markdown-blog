@@ -16,7 +16,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPost({ params }: Props) {
+export default async function BlogPost({ params }) {
   const filePath = path.join("posts", `${params.id}.md`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(fileContent);
