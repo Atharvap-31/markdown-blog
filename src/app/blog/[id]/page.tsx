@@ -3,11 +3,11 @@ import path from "path";
 import matter from "gray-matter";
 import markdownToHtml from "../../../../utils/markdownToHtml";
 
-type Props = {
-  params: {
-    id: number;
-  };
-};
+// type Props = {
+//   params: {
+//     id: number;
+//   };
+// };
 
 export async function generateStaticParams() {
   const files = fs.readdirSync(path.join("posts"));
