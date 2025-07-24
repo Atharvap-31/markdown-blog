@@ -5,7 +5,7 @@ import markdownToHtml from "../../../../utils/markdownToHtml";
 
 type Props = {
   params: {
-    id: string;
+    id: number;
   };
 };
 
