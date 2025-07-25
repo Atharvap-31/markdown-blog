@@ -3,11 +3,11 @@ import path from "path";
 import matter from "gray-matter";
 import markdownToHtml from "../../../../utils/markdownToHtml";
 
-// type Props = {
-//   params: {
-//     id: number;
-//   };
-// };
+type Props = {
+  params: {
+    id: number;
+  };
+};
 
 export async function generateStaticParams() {
   const files = fs.readdirSync(path.join("posts"));
@@ -16,7 +16,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPost({ params }: any) {
+export default async function BlogPost({ params }: Props) {
   const filePath = path.join("posts", `${params.id}.md`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(fileContent);
